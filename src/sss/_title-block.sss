@@ -1,0 +1,29 @@
+.title-block
+
+    &__title
+
+        h1
+            font-size: em(40)
+            line-height: calc(62 / 40)
+            font-weight: 300
+
+    &__crumbs
+        margin: 0 0 5px
+
+.bread-crumbs
+    font-size: em(14)
+
+    &__link, &__this
+        display: inline
+
+    &__link
+
+        &:after
+            content: "-"
+            display: inline-block
+            margin: 0 2px 0 6px
+
+        a
+            font-weight: 200
+            color: inherit
+            border: none

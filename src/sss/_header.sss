@@ -1,0 +1,45 @@
+@media (min-width: 1000px)
+    .head__burger
+        display: none
+
+.head
+    color: #fff var(--main-color)
+    padding: 53px var(--base-padding)
+
+    &__wrap
+        display: grid
+        align-items: center
+        grid-template-columns: 1fr var(--base-width) 1fr
+        grid-template-areas: "logo menu soc"
+        gap: 30px
+        max-width: 1920px
+        margin: 0 auto
+
+    &__logo
+        grid-area: logo
+
+    &__menu
+        grid-area: menu
+        margin: 0 -20px
+
+    &__soc
+        display: flex
+        justify-content: flex-end
+        grid-area: soc
+
+.h-menu
+    display: flex
+    justify-content: space-between
+
+    &__link
+        color: inherit
+        display: block
+        border: 1px solid transparent
+        border-radius: 5px
+        padding: 7px 20px 8px
+        transition: border-color .3s ease
+
+        &:hover, &:focus, &.active
+            
+            &:not(:active)
+                border-color: rgba(255,255,255, .3)

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Документы
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						include mixins/title-block.pug
+						+titleBLock(["Композиты без границ", "Документы"])
+				.inner-content__content
+					.wrapper
+						.documents-list
+							each title in ["Уставные/учредительные документы управляющей компании Кластера (АНО «СОПК «Композиты без границ»)", "Соглашения Кластера", "Положения Кластера ", "Информация о Кластере", "Инструменты государственной поддержки", "Информация о композитных материалах", ]
+								.documents-list__item
+									.document-item
+										.document-item__title
+											span.document-item__title-text=title
+										.document-item__content
+											ul.doc-list
+												each docItem in ["Инфо об учредителе АНО ", "Заключение ревизионной комиссии по результатам проверки Кластера ", "Приказ Минпромторга России о включении Кластера в Реестр ", "Свидетельство о включении в Ассоциацию Кластеров и технопарков России "]
+													li
+														a.doc-list__link(href="#")
+															span.doc-list__link-img
+																img(src="img/ico-pdf.svg")
+															span.doc-list__link-text=docItem  
+															span.doc-list__link-size   25Мб PDF
+		include inc/footer.pug
+		include inc/scripts.pug

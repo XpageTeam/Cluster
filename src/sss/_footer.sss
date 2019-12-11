@@ -1,0 +1,78 @@
+.footer
+    color: #fff var(--main-color)
+    overflow: hidden
+    position: relative
+    margin: 79px 0 0
+
+    &:before
+        content: ""
+        position: absolute calc(50% + (192px - 138px) / 2) 0 *
+        pointer-events: none
+        height: 1px
+        background: rgba(255,255,255, .2)
+
+    &__wrap
+        display: grid
+        grid-template-columns: 220px 309px 1fr auto
+        grid-template-areas: "contacts address links soc" "copy copy copy dev"
+        gap: 120px 30px
+        padding: 70px var(--base-padding) 55px
+        max-width: var(--base-width)
+        box-sizing: content-box
+        margin: 0 auto
+
+    &__contacts, &__address, &__links
+        align-self: end
+
+    &__contacts
+        grid-area: contacts
+
+    &__address
+        grid-area: address
+    
+    &__links
+        grid-area: links
+
+    &__soc
+        grid-area: soc
+
+    &__soc, &__copy, &__dev
+        align-self: center
+
+    &__copy
+        grid-area: copy
+
+    &__dev
+        grid-area: dev
+
+    &__soc, &__dev
+        display: flex
+        justify-content: flex-end
+
+.f-address
+    line-height: calc(26 / 16)
+
+.f-contacts
+    
+    &__phone
+        font-size: em(18)
+
+        a
+            color: inherit
+
+            &:not(:hover)
+                border-color: transparent
+
+    &__email
+
+        a
+            border: none
+            color: rgba(255,255,255, .6)
+
+            &:hover
+                color: inherit
+
+    &__email, &__phone
+        display: flex
+        flex-direction: column
+        align-items: flex-start

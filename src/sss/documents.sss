@@ -1,0 +1,59 @@
+.document-item
+
+    &.js__opened &__title:after
+        transform: rotateZ(-135deg)
+
+    &__title
+        border-top: 1px solid var(--border-color)
+        padding: 37px 100px 37px 0
+        position: relative
+        cursor: pointer
+        user-select: none
+
+        &-text
+            font-size: em(24)
+            line-height: calc(34 / 24)
+            max-width: 760px
+            display: block
+
+        &:after
+            content: ""
+            position: absolute calc(50% - 3px) 45px * *
+            size: 6px
+            border-right: 1px solid #000
+            border-bottom: 1px solid #000
+            transform: rotateZ(45deg)
+
+    &__content
+        display: none
+        transition: height .3s ease
+
+.doc-list
+    border-top: 1px solid var(--border-color)
+    padding: 58px 0 70px
+
+    &__link
+        display: inline-block
+        align-items: center
+        line-height: calc(26 / 18)
+
+        &-img, &-text
+            display: inline-block
+            vertical-align: middle
+
+        &-img
+            margin-right: 25px
+            
+            img
+                display: block
+
+        &-text
+            font-size: em(18)
+
+        &-size
+            color: #acacac
+
+    li
+
+        &:not(:first-child)
+            margin: 44px 0 0

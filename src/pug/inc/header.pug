@@ -1,0 +1,18 @@
+header.head
+    .head__wrap
+        .head__logo
+            a.logo(href="#")
+                img(src="img/logo.svg")
+        nav.head__menu
+            ul.h-menu
+                each item in ["Продукция", "Промышленные предприятия", "Инфраструктура", "Услуги кластера", "Мероприятия", "Документы", "Новости", "Контакты", ]
+                    li
+                        if (item == "Документы")
+                            a.h-menu__link.active(href="#")=item
+                        else
+                            a.h-menu__link(href="#")=item
+        .head__soc
+            include soc.pug
+        .head__burger
+            .burger
+                span
