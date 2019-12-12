@@ -16,20 +16,100 @@ html(lang="ru")
 				.inner-content__content
 					.wrapper
 						.contacts
-							.contacts__texts
-								.contacts-text
-									.contacts-text__text
-										p Управляющая компания Кластера — Автономная некоммерческая организация «Специализированная организация промышленного кластера «Композиты без границ» (АНО «СОПК «Композиты без границ»)
-									.contacts-text__address
-										address.contacts-address 109316, г. Москва
-											br
-											| Волгоградский проспект, д. 42, корп. 13  
-									.contacts-text__phone
-										address.contacts-phone
-											a(href="tel: +7 495 777 01 23 ") +7 495 777 01 23 
-									.contacts-text__email
-										address.contacts-phone
-											a(href="mailto: info@compositescluster.ru") info@compositescluster.ru
+							.contacts__top
+								.contacts__texts
+									.contacts-text
+										.contacts-text__text
+											p Управляющая компания Кластера — Автономная некоммерческая организация «Специализированная организация промышленного кластера «Композиты без границ» (АНО «СОПК «Композиты без границ»)
+										.contacts-text__address
+											address.contacts-address 109316, г. Москва
+												br
+												| Волгоградский проспект, д. 42, корп. 13  
+										.contacts-text__phone
+											address.contacts-phone
+												a(href="tel: +7 495 777 01 23 ") +7 495 777 01 23 
+										.contacts-text__email
+											address.contacts-email
+												a(href="mailto: info@compositescluster.ru") info@compositescluster.ru
 								.contacts__form
+									.base-form
+										.base-form__title Заказать обратный звонок
+										.base-form__form
+											form(action="#")
+												.form__inputs
+													.form__inputs-input
+														.default-input
+															input.default-input__input(type="text" required="")
+															label.default-input__label Введите Ваше имя
+															.default-input__error Ошибка
+													.form__inputs-input
+														.default-input
+															input.default-input__input.default-input__input--error(type="email" required="")
+															label.default-input__label Ваш e-mail
+															.default-input__error Ошибка
+													.form__inputs-input
+														.default-input
+															input.default-input__input(type="tel" required="")
+															label.default-input__label Ваш телефон
+															.default-input__error Ошибка
+												.form__submit
+													.form__submit-text Нажимая кнопку, Вы даете информированное согласие  
+														br
+														| на  
+														a(href="#") обработку своих персональных данных
+													.form__submit-btn
+														input.default-btn(type="submit")
+							.contacts__team
+								.team
+									.team__title Команда кластера
+									.team__list
+										.team__list-item
+											.team-item
+												figure.team-item__img
+													img(src="img/photos/ti-img-0.jpg")
+												.team-item__info
+													.t-info
+														.t-info__name
+															.t-info__name-name Лемешко Алексей Михайлович
+															.t-info__name-text директор
+														.t-info__phone
+															address.ti-phone
+																a(href="tel: +7 495 777 01 23") +7 495 777 01 23
+																span добавочный 4123
+														.t-info__email
+															address.ti-email
+																a(href="mailto: a.lemeshko@umatex.com") a.lemeshko@umatex.com
+										.team__list-item
+											.team-item
+												figure.team-item__img
+													img(src="img/photos/ti-img-0.jpg")
+												.team-item__info
+													.t-info
+														.t-info__name
+															.t-info__name-name Гасяк Андрей Владимирович
+															.t-info__name-text исполнительный директор
+														.t-info__phone
+															address.ti-phone
+																a(href="tel: +7 495 777 01 23") +7 495 777 01 23
+																span добавочный 4064
+														.t-info__email
+															address.ti-email
+																a(href="mailto: a.gasyak@umatex.com") a.gasyak@umatex.com
+										.team__list-item
+											.team-item
+												figure.team-item__img
+													img(src="img/photos/ti-img-1.jpg")
+												.team-item__info
+													.t-info
+														.t-info__name
+															.t-info__name-name Голубкин Игорь Валерьевич
+															.t-info__name-text руководитель направления взаимодействию с органами власти
+														.t-info__phone
+															address.ti-phone
+																a(href="tel: +7 495 777 01 23") +7 495 777 01 23
+																span добавочный 4145
+														.t-info__email
+															address.ti-email
+																a(href="mailto: i.golubkin@umatex.com") i.golubkin@umatex.com
 		include inc/footer.pug
 		include inc/scripts.pug

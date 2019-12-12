@@ -1,29 +1,20 @@
 .form
 
 	&__submit
-		display: flex
-		align-items: center
-		margin: 57px 0 0
-
-		&--reverse
-			flex-direction: row-reverse
-			justify-content: space-between
-
-		&:not(&--reverse) &-btn
-			margin-right: 39px
-
-		&--reverse &-btn
-			margin-left: 39px
-
-		&-btn
-			flex: none
+		margin: 25px 0 0
 
 		&-text
-			font-size: em(13)
-			// max-width: 310px
+			max-width: 420px
 
 			a
-				// color: #fff
+				
+				&:not(:hover)
+					border-color: transparent
+
+		&-btn
+
+			&:not(:first-child)
+				margin: 30px 0 0
 
 	&__inputs
 		display: flex
@@ -176,6 +167,7 @@ textarea.default-input__input
 		size: 100% 50px
 		border-radius: 5px
 		transition: border-color .3s ease
+		border: 1px solid var(--border-color)
 	
 		&--error:not(:valid)
 			border-color: red
@@ -258,7 +250,7 @@ textarea.default-input__input
 	&__label
 		font-size: 1em
 		// color: #fff
-		margin-bottom: 15px
+		margin-bottom: 7px
 
 		&-file
 			size: 49px
