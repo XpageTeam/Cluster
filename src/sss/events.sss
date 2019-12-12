@@ -1,0 +1,62 @@
+.event
+    display: flex
+    padding: 65px 0 60px
+    border-bottom: 1px solid var(--border-color)
+
+    &__date, &__link
+        flex: none
+
+    &__date
+        margin-right: 30px
+        width: 160px
+        font-weight: 400
+
+    &__link
+        margin-left: 30px
+
+    &__info
+        flex: 1 1 auto
+
+.event-date
+    font-size: em(20)
+    line-height: calc(28 / 20)
+
+.event-info
+
+    &__title
+        font-weight: 400
+        margin: 0 0 30px
+        font-size: em(20)
+        line-height: calc(28 / 20)
+        max-width: 440px
+
+.event-desc
+    display: flex
+
+    &__item 
+
+        &:not(:last-child)
+            margin-right: 50px
+
+        &:first-child:not(:last-child)
+            width: 110px
+
+        &:nth-child(2):not(:last-child)
+            width: 130px
+
+        &:first-child, &:nth-child(2)
+            
+            &:not(:last-child)
+                flex: none
+
+        &-title
+            color: #AFAFAF
+            font-size: em(12)
+            line-height: 1
+            text-transform: uppercase
+            margin: 0 0 12px
+            font-weight: 400
+
+        &-text
+            line-height: calc(26 / 16)
+            max-width: 305px

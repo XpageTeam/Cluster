@@ -1,0 +1,28 @@
+.top-tabs
+    overflow-y: auto
+    display: flex
+
+    &__link
+        border-radius: 5px
+        padding: 7px 18px
+        
+        &.active, &:active
+            border: 1px solid transparent
+            color: #fff var(--main-color)
+            cursor: default
+
+        &:not(.active)
+            transition: border-color .3s ease
+            border: 1px solid var(--border-color)
+
+            &:hover
+                border-color: var(--main-color)
+
+        &:not(:last-child)
+            margin-right: 15px
+
+@media (min-width: 660px)
+    .top-tabs
+
+        select
+            display: none

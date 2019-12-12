@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Новости
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						include mixins/title-block.pug
+						+titleBLock(["Композиты без границ", "Новости"])
+				.inner-content__content
+					.wrapper
+						.news-list
+							.news-list__tabs
+								.top-tabs
+									a.top-tabs__link.active(href="#") Все
+									a.top-tabs__link(href="#") 2019
+									a.top-tabs__link(href="#") 2018
+									a.top-tabs__link(href="#") 2017
+									a.top-tabs__link(href="#") 2016
+									select
+										<!-- selected нужно устанавливать в соответствии с активной ссылкой -->
+										<!-- value - порядковый номер ссылки -->
+										option(value="1" selected) Все
+										option(value="2") 2019
+										option(value="3") 2018
+										option(value="4") 2017
+										option(value="4") 2016
+							.news-list__list
+								.news-list__list-item
+									.news
+										a.news__img(href="#")
+											img(src="img/photos/news-img-0.jpg")
+										.news__date 17. 10 . 2019
+										.news__title 
+											a(href="#") VII Форум «Композиты без границ» прошел в Москве 17 октября 2019 года
+										.news__text 17 октября состоялся седьмой по счету ежегодный форум «Композиты без границ». Мероприятие стало рабочей площадкой для обсуждения глобальной технологической повестки в отрасли композитов. 
+										.news__link
+											a.more-link(href="#") Подробнее
+								.news-list__list-item
+									.news
+										a.news__img(href="#")
+											img(src="img/photos/news-img-1.jpg")
+										.news__date 17. 10 . 2019
+										.news__title 
+											a(href="#") В Туле обсудили развитие композитов, цифровой экономики и аддитивных технолог
+										.news__text 19 июня генеральный директор Госкорпорации «Росатом» Алексей Лихачев в ходе визита в Тульскую область принял участие в рабочем совещании с представителями региональных предприятий.
+										.news__link
+											a.more-link(href="#") Подробнее
+								.news-list__list-item
+									.news
+										a.news__img(href="#")
+											img(src="img/photos/news-img-2.jpg")
+										.news__date 17. 10 . 2019
+										.news__title 
+											a(href="#") VII Форум «Композиты без границ» прошел в Москве 17 октября 2019 года
+										.news__text 17 октября состоялся седьмой по счету ежегодный форум «Композиты без границ». Мероприятие стало рабочей площадкой для обсуждения глобальной технологической повестки в отрасли композитов. 
+											| технологической повестки в отрасли композитов. 
+											| технологической повестки в отрасли композитов. 
+										.news__link
+											a.more-link(href="#") Подробнее
+								.news-list__list-item
+									.news
+										a.news__img(href="#")
+											img(src="img/photos/news-img-3.jpg")
+										.news__date 17. 10 . 2019
+										.news__title 
+											a(href="#") В Туле обсудили развитие композитов, цифровой экономики и аддитивных технолог
+										.news__text 19 июня генеральный директор Госкорпорации «Росатом» Алексей Лихачев в ходе визита в Тульскую область принял участие в рабочем совещании с представителями региональных предприятий.
+										.news__link
+											a.more-link(href="#") Подробнее
+						include inc/omer-btn.pug
+		include inc/footer.pug
+		include inc/scripts.pug

@@ -1,0 +1,71 @@
+.news-list
+
+    &__list
+
+        &:not(:first-child)
+            margin: 65px 0 0
+
+        &-item
+
+            &:not(:first-child)
+                margin: 75px 0 0
+
+.news
+    display: grid
+    grid-template-columns: 278px 1fr auto
+    grid-template-areas: "img date more" "img title more" "img text more"
+    grid-template-rows: 1fr auto auto
+    align-items: end
+    gap: 18px 60px
+
+    &__img
+        grid-area: img
+
+        img
+            display: block
+            border-radius: 5px
+
+    &__date
+        grid-area: date
+        line-height: 1
+        margin-bottom: 25px
+
+    &__title
+        grid-area: title
+        font-size: em(20)
+        line-height: calc(28 / 20)
+        max-width: 520px
+        -webkit-line-clamp: 2
+        line-clamp: 2
+
+        a
+            color: inherit
+            border: none
+
+    &__title, &__text
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        /* autoprefixer: ignore next */
+        -webkit-box-orient: vertical
+
+    &__text
+        grid-area: text
+        max-width: 530px
+        -webkit-line-clamp: 3
+        line-clamp: 3
+
+    &__link
+        grid-area: more
+
+.more-link
+    display: inline-block
+    border-bottom: 1px solid currentColor !important
+    position: relative
+    margin-right: 30px
+
+    &:after
+        content: ""
+        position: absolute calc(50% - 6px) * * calc(100% + 15px)
+        background: url("../img/ico-more-arrow.svg") center no-repeat
+        size: 15px 11px

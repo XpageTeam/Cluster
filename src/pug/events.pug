@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Мероприятия
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						include mixins/title-block.pug
+						+titleBLock(["Композиты без границ", "Мероприятия"])
+				.inner-content__content
+					.wrapper
+						.events
+							.events__tabs
+								.top-tabs
+									a.top-tabs__link.active(href="#") Все
+									a.top-tabs__link(href="#") 2020
+									a.top-tabs__link(href="#") 2021
+									a.top-tabs__link(href="#") 2022
+									select
+										<!-- selected нужно устанавливать в соответствии с активной ссылкой -->
+										<!-- value - порядковый номер ссылки -->
+										option(value="1" selected) Все
+										option(value="2") 2020
+										option(value="3") 2021
+										option(value="4") 2022
+							.events__list
+								.e-list
+									.e-list__item
+										.event
+											.event__date
+												.event-date 12.01.2019 - 15.01.2019
+											.event__info
+												.event-info
+													.event-info__title ISPO Munich 2020
+													.event-info__desc
+														.event-desc
+															.event-desc__item
+																.event-desc__item-title Тематика
+																.event-desc__item-text Спорттовары
+															.event-desc__item
+																.event-desc__item-title тип мероприятия
+																.event-desc__item-text Выставка
+															.event-desc__item
+																.event-desc__item-title город
+																.event-desc__item-text Мюнхен
+											.event__link
+												a.bordered-btn.bordered-btn--arrow(href="#") Сайт мероприятия
+									.e-list__item
+										.event
+											.event__date
+												.event-date 12.01.2019 - 15.01.2019
+											.event__info
+												.event-info
+													.event-info__title День проектировщика 2020, Алматы (Выставка для продвижения продукции СВА)
+													.event-info__desc
+														.event-desc
+															.event-desc__item
+																.event-desc__item-title Тематика
+																.event-desc__item-text Строительство
+															.event-desc__item
+																.event-desc__item-title тип мероприятия
+																.event-desc__item-text Конференция
+															.event-desc__item
+																.event-desc__item-title город
+																.event-desc__item-text Алма-Ата
+											.event__link
+												a.bordered-btn.bordered-btn--arrow(href="#") Сайт мероприятия
+									.e-list__item
+										.event
+											.event__date
+												.event-date 12.01.2019 - 15.01.2019
+											.event__info
+												.event-info
+													.event-info__title VII Российско-китайское ЭКСПО
+													.event-info__desc
+														.event-desc
+															.event-desc__item
+																.event-desc__item-title Тематика
+																.event-desc__item-text Сборная
+															.event-desc__item
+																.event-desc__item-title тип мероприятия
+																.event-desc__item-text Выставка
+															.event-desc__item
+																.event-desc__item-title город/место проведения
+																.event-desc__item-text Харбинский международный конференционно-выставочный центр
+											.event__link
+												a.bordered-btn.bordered-btn--arrow(href="#") Сайт мероприятия
+									.e-list__item
+										.event
+											.event__date
+												.event-date 12.01.2019 - 15.01.2019
+											.event__info
+												.event-info
+													.event-info__title День проектировщика 2020, Алматы (Выставка для продвижения продукции СВА)
+													.event-info__desc
+														.event-desc
+															.event-desc__item
+																.event-desc__item-title Тематика
+																.event-desc__item-text Спорттовары
+															.event-desc__item
+																.event-desc__item-title тип мероприятия
+																.event-desc__item-text Выставка
+															.event-desc__item
+																.event-desc__item-title город
+																.event-desc__item-text Мюнхен
+											.event__link
+												a.bordered-btn.bordered-btn--arrow(href="#") Сайт мероприятия
+						include inc/omer-btn.pug
+		include inc/footer.pug
+		include inc/scripts.pug

@@ -59,7 +59,7 @@ address
 
 body
 	min-width: 320px
-	line-height: calc(22 / 14)
+	line-height: calc(26 / 16)
 	font-family: var(--default-font)
 	font-weight: 300
 	font-size: var(--base-font-size)
@@ -169,35 +169,44 @@ li
 	overflow: hidden
 
 
-.default-btn, .favorite-btn, .bordered-btn
-	padding: 13px 25px
+.default-btn, .bordered-btn, .more-btn
+	padding: 6px 16px 7px
 	display: inline-block
 	border-radius: 5px
 	transition: background-color .3s ease, color .3s ease, border-color .3s ease
 	cursor: pointer
-	letter-spacing: 0.02em
 	white-space: nowrap
+	font-weight: 300
 
-.favorite-btn
-	border: 1px solid var(--border-color)
-	background-image: url("../img/ico-favorite.svg")
-	background-repeat: no-repeat
+.more-btn
+	padding: 15px 50px 15px 25px
+	position: relative
+	color: #fff var(--main-color)
 
-	&:not(:empty)
-		background-position: left 21px center
-		padding-left: 55px
+	&:hover:not(:active)
+		background-color: var(--main-hover-color)
 
-	&:empty
-		background-position: center
-		size: 50px
-		padding: 0
+	&:active
+		transition: none
 
-	&:focus, &:hover, &.active
-		border-color: var(--main-color)
+	&.active
 
-	&:hover, &.active
-		color: #fff var(--main-color)
-		background-image: url("../img/ico-favorite-white-added.svg")
+		&:after
+			animation: updating 2s linear infinite
+
+	&:after
+		content: ""
+		position: absolute calc(50% - 7px) 25px * *
+		background: url("../img/ico-update.svg") center no-repeat
+		size: 14px
+
+@keyframes updating
+	0%
+		transform: rotateZ(0)
+		
+	100%
+		transform: rotateZ(360deg)
+		
 
 .default-btn
 	border: none
@@ -205,15 +214,24 @@ li
 	border: 1px solid var(--main-color)
 
 	&:hover, &:focus, &.active
-		background-color: rgba(0,0,0, .8)
+		background-color: var(--main-hover-color)
 		border-color: transparent
 
 .bordered-btn
-	border: 1px solid var(--border-color)
+	border: 1px solid var(--main-color)
+	color: var(--main-color) #fff
 
-	&:focus, &:hover
-		border-color: var(--main-color)
+	&--arrow
+		padding-right: 47px
+		background-position: right 18px center
+		background-repeat: no-repeat
+		background-image: url("../img/ico-arrow-for-btn.svg") 
+
+	&:hover:not(:active)
+		border-color: var(--border-color)
+		color: #000
 
 	&:active
-		color: #fff
-		background-color: rgba(0,0,0, .8)
+		background-image: url("../img/ico-arrow-for-btn-white.svg")
+		color: #fff var(--main-color)
+		transition: none
