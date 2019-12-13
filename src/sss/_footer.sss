@@ -3,6 +3,7 @@
     overflow: hidden
     position: relative
     margin: 79px 0 0
+    font-weight: 300
 
     &:before
         content: ""
@@ -76,3 +77,18 @@
         display: flex
         flex-direction: column
         align-items: flex-start
+
+.f-links
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+    &__link
+        position: relative
+        border-bottom: 1px solid #fff
+
+        &:after
+            content: ""
+            position: absolute calc(50% - 6px) * * calc(100% + 20px)
+            background: url("../img/ico-arrow-for-btn-white.svg") center no-repeat
+            size: 15px 11px

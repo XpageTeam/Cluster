@@ -9,7 +9,7 @@ import("./jquery.fancybox.js")
 	.then(() => {
 		const event = document.createEvent("HTMLEvents");
 
-		event.initEvent("fancyboxReady", false, true)
+		event.initEvent("fancyboxReady", true, true)
 
 		document.dispatchEvent(event);
 		isFancyboxReady = true
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	})();
 });
 
-const initFancybox = () => {
+window.initFancybox = () => {
 	$(".fancybox").fancybox({
 		trapFocus: false,
 		touch : false,

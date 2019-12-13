@@ -1,32 +1,23 @@
 module.exports = {
-	formats: 'local woff woff2',
+	formats: 'local woff',
 	display: "swap",
 	custom: {
-		"Montserat": {
+		"Circe": {
 			variants: {
 				normal: {
 					300: {
 						url: {
-							woff: "../fonts/montserrat-light.woff",
-							woff2: "../fonts/montserrat-light.woff2"
+							woff: "../fonts/Circe-Light.woff"
 						}
 					},
 					400: {
 						url: {
-							woff: "../fonts/montserrat-regular.woff",
-							woff2: "../fonts/montserrat-regular.woff2"
-						}
-					},
-					500: {
-						url: {
-							woff: "../fonts/montserrat-semibold.woff",
-							woff2: "../fonts/montserrat-semibold.woff2"
+							woff: "../fonts/Circe-Regular.woff"
 						}
 					},
 					700: {
 						url: {
-							woff: "../fonts/montserrat-bold.woff",
-							woff2: "../fonts/montserrat-bold.woff2"
+							woff: "../fonts/Circe-Bold.woff"
 						}
 					}
 				}

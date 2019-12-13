@@ -22,3 +22,32 @@ footer.footer
         .footer__dev
             a.f-dev(href="#" target="blank")
                 img(src="img/ico-dev.svg", alt="xpage")
+
+.popup#request
+    .base-form
+        .base-form__title Оставить заявку
+        .base-form__form
+            form(action="#")
+                .form__inputs
+                    .form__inputs-input
+                        .default-input
+                            input.default-input__input(type="text" required="")
+                            label.default-input__label Введите Ваше имя
+                            .default-input__error Ошибка
+                    .form__inputs-input
+                        .default-input
+                            input.default-input__input.default-input__input--error(type="email" required="")
+                            label.default-input__label Ваш e-mail
+                            .default-input__error Ошибка
+                    .form__inputs-input
+                        .default-input
+                            input.default-input__input(type="tel" required="")
+                            label.default-input__label Ваш телефон
+                            .default-input__error Ошибка
+                .form__submit
+                    .form__submit-text Нажимая кнопку, Вы даете информированное согласие  
+                        br
+                        | на  
+                        a(href="#") обработку своих персональных данных
+                    .form__submit-btn
+                        input.default-btn(type="submit")

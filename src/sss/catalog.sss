@@ -1,0 +1,79 @@
+.catalog-list
+
+    &__item
+
+        &:not(:first-child)
+            margin: 62px 0 0
+
+.cat-item
+    display: flex
+
+    &__img
+        border-radius: 5px
+        overflow: hidden
+        border: 1px solid var(--border-color)
+        transition: border-color .3s ease
+        display: flex
+        align-items: center
+        justify-content: center
+        size: 205px 155px
+        margin-right: 60px
+        flex: none
+
+        &:hover
+            border-color: var(--main-color)
+
+        img
+            max-height: 100%
+
+    &__desc
+        display: flex
+        flex-direction: column
+        flex: 1 1 auto
+
+    &__arrow
+        flex: none
+        align-self: center
+
+.ci-desc
+    max-width: 540px
+    display: flex
+    flex-direction: column
+    flex: 1 1 auto
+
+    &__title
+        font-weight: 400
+        font-size: em(20)
+        line-height: calc(28 / 20)
+        margin: 0 0 3px
+
+    &__address
+
+        &:before
+            content: ""
+            display: inline-block
+            margin-right: 14px
+            background: url("../img/ico-marker-small.svg") no-repeat
+            size: 9px 12px
+
+    &__text
+        padding: 8px 0 0
+        margin-block: auto
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        /* autoprefixer: ignore next */
+        -webkit-box-orient: vertical
+        -webkit-line-clamp: 3
+        line-clamp: 3
+
+.arrow-btn
+    border-radius: 50%
+    size: em(60)
+    background: url("../img/ico-arrow-for-btn-white.svg") center no-repeat
+    background-color: var(--main-color)
+    transition: background-color .3s ease
+    display: inline-block
+
+    &:hover
+        background-color: var(--main-hover-color)

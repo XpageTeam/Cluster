@@ -61,7 +61,7 @@ body
 	min-width: 320px
 	line-height: calc(26 / 16)
 	font-family: var(--default-font)
-	font-weight: 300
+	font-weight: 400
 	font-size: var(--base-font-size)
 	color: var(--body-text-color)
 	background: var(--body-bg-color)
@@ -175,7 +175,6 @@ li
 	transition: background-color .3s ease, color .3s ease, border-color .3s ease
 	cursor: pointer
 	white-space: nowrap
-	font-weight: 300
 
 .default-btn
 	padding: 12px 24px
@@ -226,17 +225,19 @@ li
 	border: 1px solid var(--main-color)
 	color: var(--main-color) #fff
 
+	&:hover:not(:active)
+		border-color: var(--border-color)
+		color: #000
+
 	&--arrow
 		padding-right: 47px
 		background-position: right 18px center
 		background-repeat: no-repeat
 		background-image: url("../img/ico-arrow-for-btn.svg") 
 
-	&:hover:not(:active)
-		border-color: var(--border-color)
-		color: #000
+		&:active
+			background-image: url("../img/ico-arrow-for-btn-white.svg")
 
 	&:active
-		background-image: url("../img/ico-arrow-for-btn-white.svg")
 		color: #fff var(--main-color)
 		transition: none

@@ -64,3 +64,77 @@
         font-size: em(24)
         line-height: calc(28 / 24)
         margin: 0 0 27px
+
+    &__list
+
+        &-item
+
+            &:not(:last-child)
+                border-bottom: 1px solid rgba(255,255,255, .2)
+
+.team-item
+    display: flex
+    align-items: center
+    padding: 30px 0
+
+    &__img
+        flex: none
+        width: 85px
+        margin-right: 55px
+
+        img
+            display: block
+
+    &__info
+        flex: 1 1 auto
+
+.t-info
+    display: flex
+    align-items: flex-end
+
+    &__name
+        width: persent(420, 1060)
+
+        &-name
+            font-size: em(20)
+            line-height: calc(24 / 20)
+        
+        &-text
+            color: rgba(255,255,255, .3)
+            margin: 10px 0 0
+            max-width: 275px
+            line-height: calc(17 / 16)
+
+    &__phone, &__email, &__name
+
+        &:not(:last-child)
+            margin-right: 40px
+
+    &__phone
+        width: persent(251, 1060)
+
+
+.ti-phone, .ti-email
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+    a
+        color: #ffffff
+        border: none
+    
+.ti-phone
+
+    a
+        font-size: em(20)
+        line-height: calc(28 / 20)
+
+    span
+        color: rgba(255, 255, 255, .5)
+        line-height: 1
+        margin: 5px 0 0
+
+.ti-email
+
+    a
+        line-height: 1

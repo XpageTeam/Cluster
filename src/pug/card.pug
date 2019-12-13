@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title ООО «Алабуга-Волокно»
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						include mixins/title-block.pug
+						+titleBLock(["Композиты без границ", "Промышленные предприятия", "ООО «Алабуга-Волокно»"])
+				.inner-content__content
+					.wrapper
+						.c-detail
+							.c-detail__top
+								.c-detail__top-slider
+									.detail-slider
+										.swiper-wrapper
+											.swiper-slide
+												a.detail-slider__slide(href="img/photos/detail-img.jpg" data-fancybox="detail")
+													img(src="img/photos/detail-img.jpg")
+											.swiper-slide
+												a.detail-slider__slide(href="img/photos/detail-img.jpg" data-fancybox="detail")
+													img.swiper-lazy(data-src="img/photos/detail-img.jpg")
+													.swiper-lazy-preloader
+											.swiper-slide
+												a.detail-slider__slide(href="img/photos/detail-img.jpg" data-fancybox="detail")
+													img.swiper-lazy(data-src="img/photos/detail-img.jpg")
+													.swiper-lazy-preloader
+											.swiper-slide
+												a.detail-slider__slide(href="img/photos/detail-img.jpg" data-fancybox="detail")
+													img.swiper-lazy(data-src="img/photos/detail-img.jpg")
+													.swiper-lazy-preloader
+										.detail-slider__arrows
+											.swiper-button-prev
+											.swiper-button-next
+								.c-detail__top-desc
+									.detail-desc
+										.detail-desc__button
+											a.bordered-btn(href="#") umatex.com
+										address.detail-desc__address 
+											p 423600, Республика Татарстан, г. Елабуга, ул. Ш-2, стр. 11/9
+										address.detail-desc__phone
+											a(href="tel: +7(855)575-34-00") +7(855)575-34-00
+										address.detail-desc__email
+											a(href="mailto: alabuga-volokno@umatex.com") alabuga-volokno@umatex.com
+								.c-detail__top-logo
+									a.detail-logo(href="#")
+										img(src="img/photos/cat-item-item-0.jpg")
+							.c-detail__text
+								.detail-text 
+									p Производство среднепрочного, высокопрочного и высокомодульного 
+										br 
+										| углеродного волокна UMT на основе ПАН-прекурсора. Производство стеклопластиковых труб - насосно-компрессорных, обсадных, линейных и фасонных изделий, для ЖКХ, электроэнергетики, нефтяной отрасли, строительства и промышленных предприятий. Производство среднепрочного, высокопрочного и высокомодульного углеродного волокна UMT на основе ПАН-прекурсора. 
+		include inc/footer.pug
+		include inc/scripts.pug

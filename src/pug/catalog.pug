@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Промышленные предприятия
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						include mixins/title-block.pug
+						+titleBLock(["Композиты без границ", "Промышленные предприятия"])
+				.inner-content__content
+					.wrapper
+						.catalog
+							.catalog-list
+								.catalog-list__item
+									.cat-item
+										a.cat-item__img(href="#")
+											img(src="img/photos/cat-item-item-0.jpg")
+										.cat-item__desc
+											.ci-desc
+												a.ci-desc__title(href="#") ООО «Алабуга-Волокно»
+												address.ci-desc__address Республика Татарстан, г. Елабуга
+												.ci-desc__text Производство среднепрочного, высокопрочного и высокомодульного углеродного волокна UMT на основе ПАН-прекурсора
+										.cat-item__arrow
+											a.arrow-btn(href="#")
+								.catalog-list__item
+									.cat-item
+										a.cat-item__img(href="#")
+											img(src="img/photos/cat-item-item-1.jpg")
+										.cat-item__desc
+											.ci-desc
+												a.ci-desc__title(href="#") ООО «Композит Волокно»
+												address.ci-desc__address г. Саратов
+												.ci-desc__text Производство химических волокон, 
+													br
+													| ПАН-волокна, ПАН-прекурсора
+										.cat-item__arrow
+											a.arrow-btn(href="#")
+								.catalog-list__item
+									.cat-item
+										a.cat-item__img(href="#")
+											img(src="img/photos/cat-item-item-2.jpg")
+										.cat-item__desc
+											.ci-desc
+												a.ci-desc__title(href="#") ООО «НПФ «РЕКОН»
+												address.ci-desc__address Республика Татарстан, г. Казань
+												.ci-desc__text Производство пленкообразующих компонентов замасливателей для базальтовых и стеклянных волокон, материалов для усиления строительных конструкций, строительной химии
+										.cat-item__arrow
+											a.arrow-btn(href="#")
+								.catalog-list__item
+									.cat-item
+										a.cat-item__img(href="#")
+											img(src="img/photos/cat-item-item-3.jpg")
+										.cat-item__desc
+											.ci-desc
+												a.ci-desc__title(href="#") ООО НПП «Завод стеклопластиковых труб»
+												address.ci-desc__address Республика Татарстан, г. Казань
+												.ci-desc__text Производство стеклопластиковых труб - насосно-компрессорных, обсадных, линейных и фасонных изделий, для ЖКХ, электроэнергетики, нефтяной отрасли, строительства и промышленных предприятий
+										.cat-item__arrow
+											a.arrow-btn(href="#")
+								.catalog-list__item
+									.cat-item
+										a.cat-item__img(href="#")
+											img(src="img/photos/cat-item-item-4.jpg")
+										.cat-item__desc
+											.ci-desc
+												a.ci-desc__title(href="#") ООО «КАМАТЕК»
+												address.ci-desc__address г. Набережные Челны, Промышленно – коммунальная зона Промзона
+												.ci-desc__text Производство изделий из стеклонаполненного композиционного материала SMC/BMC (препрега) по современной технологии термопрессования
+										.cat-item__arrow
+											a.arrow-btn(href="#")
+						include inc/omer-btn.pug
+		include inc/footer.pug
+		include inc/scripts.pug
