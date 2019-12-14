@@ -30,7 +30,7 @@ html(lang="ru")
 									a.play-link.fancybox(href="files/files.mp4") Посмотреть видео 
 				aside.main-screen__side.main-screen__side--right
 					include inc/main-right.pug
-			section.main-screen.main-screen--white-bg#second
+			section.main-screen.main-screen--white-bg#targets
 				aside.main-screen__side.main-screen__side--left
 					include mixins/main-left.pug
 					+mainLeft("color")
@@ -50,6 +50,20 @@ html(lang="ru")
 												figure.targets-list__item-img
 													img(src="img/photos/target-icon-"+i+".svg")
 												figcaption.targets-list__item-text=target
+				aside.main-screen__side.main-screen__side--right
+					include inc/main-right.pug
+			section.main-screen.main-screen--white-bg#territory
+				aside.main-screen__side.main-screen__side--left
+					include mixins/main-left.pug
+					+mainLeft("color")
+				.main-screen__content
+					.main-screen__content-content
+						.wrapper
+							.main-territory
+								.main-territory__title
+								.main-territory__regions
+									ul.ter-regions
+										li.ter-regions__item
 				aside.main-screen__side.main-screen__side--right
 					include inc/main-right.pug
 		include inc/scripts.pug
