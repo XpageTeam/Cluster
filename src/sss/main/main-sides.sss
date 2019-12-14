@@ -1,0 +1,75 @@
+.main-screen
+
+    &__side
+        position: absolute * * 0
+        z-index: 10
+        height: 100%
+        padding-block: 100px 93px
+        display: flex
+        flex-direction: column
+
+        &--left
+            left: 0
+
+        &--right
+            right: 0
+
+    &:first-child
+
+        .main-logo
+            
+            img
+                max-width: none
+
+.main-logo
+    size: 148px 85px
+
+    img
+        display: block
+
+.mr, .ml
+
+    &-side
+        flex: 1 1 auto
+        justify-content: space-between
+        display: flex
+        flex-direction: column
+
+.ml-side
+    align-items: center
+    padding-inline: 73px
+
+.mr-side
+    padding-inline: 37px
+
+    &__soc
+        
+        .soc
+            display: block
+
+            &__link
+
+                &:not(:last-child)
+                    margin: 0 0 31px
+
+.ms-nav
+
+    &__item
+        background: currentColor
+        transition: transform .3s ease
+        size: 38px 1px
+        position: relative
+
+        &:before
+            content: ""
+            position: absolute -10px -15px
+
+        &:not(:first-child)
+            margin: 30px 0 0
+
+        &:not(.active)
+            transform: scaleX(calc(20 / 38))
+            cursor: pointer
+
+            &:hover
+                transform: scaleX(calc(20 / 30))

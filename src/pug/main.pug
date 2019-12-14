@@ -7,6 +7,50 @@ html(lang="ru")
 		include inc/css.pug
 	body.main.loading
 		main#content
-			
+			section.main-screen.main-screen--blue-bg#main
+				aside.main-screen__side.main-screen__side--left
+					include mixins/main-left.pug
+					+mainLeft("big")
+				.main-screen__content.main-screen__content--video
+					.main-screen__content-video
+						video(muted="" loop="" autoplay="" preload="meta" poster="img/photos/main-poster.jpg" src="files/files.mp4")
+					.main-screen__content-content
+						.wrapper
+							.top-block
+								nav.top-block__nav
+									ul.main-menu
+										each item in ["Продукция", "Промышленные предприятия", "Инфраструктура", "Услуги кластера", "Мероприятия", "Документы", "Новости", "Контакты", ]
+											li
+												a.main-menu__link(href="#")=item
+								.top-block__text
+									.top-block__text-title Межрегиональный промышленный кластер «Композиты без границ»
+									.top-block__text-text
+										p Площадка для эффективного взаимодействия и развития кооперации между производителями композитных материалов и изделий, крупными корпорациями, инфраструктурными площадками, образовательными и научными организациями, институтами развития и органами государственной власти
+								.top-block__link
+									a.play-link.fancybox(href="files/files.mp4") Посмотреть видео 
+				aside.main-screen__side.main-screen__side--right
+					include inc/main-right.pug
+			section.main-screen.main-screen--white-bg#second
+				aside.main-screen__side.main-screen__side--left
+					include mixins/main-left.pug
+					+mainLeft("color")
+				.main-screen__content
+					.main-screen__content-content
+						.wrapper
+							.main-targets
+								.main-targets__title
+									.main-title Цели создания
+								.main-targets__subtitle Уникальная площадка для развития отрасли композитных материалов и изделий из них в России
+								.main-targets__text
+									p Межрегиональная кооперация направлена на формирование в России полной технологической цепочки производства композитных материалов, включая производство: углеродного волокна, стекловолокна, базальтового волокна, тканей и препрегов на основе этих волокон, а также готовых композитных изделий для конечных потребителей
+								.main-targets__list
+									ul.targets-list
+										each target, i in ["Кратное масштабирование российского рынка композитных материалов", "Развитие профессиональных кадров", "Импортозамещение и развитие экспорта", "Привлечение частных инвестиций", ]
+											li.targets-list__item
+												figure.targets-list__item-img
+													img(src="img/photos/target-icon-"+i+".svg")
+												figcaption.targets-list__item-text=target
+				aside.main-screen__side.main-screen__side--right
+					include inc/main-right.pug
 		include inc/scripts.pug
-		script(src="js/main-page.ts")
+		script(src="js/main-page.js")

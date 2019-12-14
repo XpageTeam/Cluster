@@ -1,6 +1,6 @@
 html
 	font-size: 100%
-	width: 100vw
+	width: 100%
 	overflow-x: hidden
 
 input, a, button, textarea, select
@@ -153,13 +153,14 @@ li
 		size: 49px
 		border: 1px solid rgba(255,255,255, .2)
 		border-radius: 50%
+		background-color: var(--main-color)
 		transition: border-color .3s ease
 
 		path
 			transition: color .3s ease
 
 		&:hover, &:focus
-			background: var(--main-color)
+			background: var(--main-hover-color)
 			border-color: #fff
 
 		&:not(:last-child)
@@ -241,3 +242,17 @@ li
 	&:active
 		color: #fff var(--main-color)
 		transition: none
+
+.arrow-btn
+	border-radius: 50%
+	size: em(60)
+	background: url("../img/ico-arrow-for-btn-white.svg") center no-repeat
+	background-color: var(--main-color)
+	transition: background-color .3s ease
+	display: inline-block
+
+	&:hover
+		background-color: var(--main-hover-color)
+
+	&--to-bot
+		transform: rotateZ(90deg)

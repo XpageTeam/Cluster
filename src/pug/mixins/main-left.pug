@@ -1,0 +1,21 @@
+mixin mainLeft(logoType)
+    .ml-side
+        .ml-side__logo
+            figure.main-logo
+                case logoType
+                    when "big"
+                        img(src="img/big-logo.svg")
+                    when "color"
+                        img(src="img/color-logo.svg")
+                    default
+                        img(src="img/big-logo.svg")
+        nav.ml-side__nav
+            ul.ms-nav
+                li.ms-nav__item.active
+                li.ms-nav__item
+                li.ms-nav__item
+                li.ms-nav__item
+                li.ms-nav__item
+                li.ms-nav__item
+        .ml-side__to-bot
+            a.arrow-btn.arrow-btn--to-bot(href="#")
