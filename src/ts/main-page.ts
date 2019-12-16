@@ -2,21 +2,22 @@ import domReady from "./xpage/ready";
 import App from "./xpage/core";
 
 domReady(() => {    
-    App.each(".main-screen__side--left", (el: HTMLElement, i: Number) => {
+    App.each(".ml-side", (el: HTMLElement, i: Number) => {
         document.body.addEventListener("scroll", function(){
             setSideBlockBottomOffset(el, i);
         });
+
+        setSideBlockBottomOffset(el, i);
+    });    
+
+    App.each(".mr-side", (el: HTMLElement, i: Number) => {
+        document.body.addEventListener("scroll", function(){
+            setSideBlockBottomOffset(el, i);
+        });
+
 
         setSideBlockBottomOffset(el, i);
     });
-
-    App.each(".main-screen__side--right", (el: HTMLElement, i: Number) => {
-        document.body.addEventListener("scroll", function(){
-            setSideBlockBottomOffset(el, i);
-        });
-
-        setSideBlockBottomOffset(el, i);
-    })
 });
 
 function setSideBlockBottomOffset(sideBlock: HTMLElement, blockIndex: Number){
