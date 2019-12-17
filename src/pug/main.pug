@@ -10,7 +10,7 @@ html(lang="ru")
 		main#content
 			section.main-screen.main-screen--blue-bg#main
 				aside.main-screen__side.main-screen__side--left
-					+mainLeft("big")
+					+mainLeft("big", 0)
 				.main-screen__content.main-screen__content--video
 					.main-screen__content-video
 						video(muted="" loop="" autoplay="" preload="meta" poster="img/photos/main-poster.jpg" src="files/files.mp4")
@@ -32,7 +32,7 @@ html(lang="ru")
 					include inc/main-right.pug
 			section.main-screen.main-screen--white-bg#targets
 				aside.main-screen__side.main-screen__side--left
-					+mainLeft("color")
+					+mainLeft("color", 1)
 				.main-screen__content
 					.main-screen__content-content
 						.wrapper
@@ -53,13 +53,14 @@ html(lang="ru")
 					include inc/main-right.pug
 			section.main-screen.main-screen--blue-bg#territory
 				aside.main-screen__side.main-screen__side--left
-					+mainLeft("transparent")
+					+mainLeft("transparent", 2)
 				.main-screen__content
 					.main-screen__content-content
 						.wrapper
 							.main-territory
 								.main-territory__title 
 									.main-title Территория функционирования кластера
+									.main-territory__title-decor
 								.main-territory__regions
 									ul.ter-regions
 										each region in ["Московская область", "Тульская область ", "Республика Татарстан", "Ульяновская область ", "Саратовская область ", ]
@@ -73,7 +74,7 @@ html(lang="ru")
 					include inc/main-right.pug
 			section.main-screen.main-screen--blue-bg#prod
 				aside.main-screen__side.main-screen__side--left
-					+mainLeft("transparent")
+					+mainLeft("transparent", 3)
 				.main-screen__content
 					.main-screen__content-content
 						.wrapper
@@ -97,7 +98,7 @@ html(lang="ru")
 					include inc/main-right.pug
 			section.main-screen.main-screen--white-bg#news
 				aside.main-screen__side.main-screen__side--left
-					+mainLeft("color")
+					+mainLeft("color", 4)
 				.main-screen__content
 					.main-screen__content-content
 						.wrapper
@@ -130,7 +131,7 @@ html(lang="ru")
 					include inc/main-right.pug
 			section.main-screen.main-screen--blue-bg#contacts
 				aside.main-screen__side.main-screen__side--left
-					+mainLeft("transparent")
+					+mainLeft("transparent", 5)
 				.main-screen__content
 					.main-screen__content-content
 						.wrapper
@@ -155,7 +156,7 @@ html(lang="ru")
 												a.f-links__link.fancybox(href="#request") Оставить заявку
 								.main-contacts__team
 									.main-team
-										.main-team__title
+										.main-team__title Команда кластера
 										.main-team__list
 											.main-team__list-item
 												.mt-person
@@ -175,7 +176,9 @@ html(lang="ru")
 													figure.mt-person__img
 														img(src="img/photos/mp-img-0.jpg")
 													.mt-person__name Гасяк Андрей Владимирович
-													.mt-person__position исполнительный директор
+													.mt-person__position исполнительный
+														br
+														| директор
 													.mt-person__phone 
 														address.person-phone
 															a(href="tel: +7 495 777 01 23") +7 495 777 01 23

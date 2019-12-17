@@ -21,6 +21,7 @@ body.main
 
     &--blue-bg
         color: #fff var(--main-color)
+        font-weight: 300
 
         .main-screen
 
@@ -194,6 +195,13 @@ body.main
     &__title
         max-width: 360px
         margin: 0 0 75px
+        position: relative
+
+        &-decor
+            position: absolute 30px * * calc(100% + 10px)
+            background: url("../img/territory-center-decor.svg") no-repeat
+            size: 180px 184px
+            z-index: 2
 
 .ter-regions
     font-weight: 300
@@ -334,3 +342,65 @@ body.main
     &__text
         grid-area: text
         max-width: 430px
+
+
+
+.main-contacts
+    min-height: inherit
+    size: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    position: relative
+    padding-left: var(--main-padding)
+
+    &__text
+        max-width: 715px
+        font-weight: 300
+        margin: 0 0 55px
+
+    &__contacts
+        margin: 0 0 80px
+
+.m-contacts
+    display: flex
+    align-items: flex-end
+
+    &__contacts, &__address, &__links
+
+        &:not(:last-child)
+            margin-right: 60px
+
+.main-team
+
+    &__title
+        margin: 0 0 40px
+        font-weight: 300
+        font-size: em(24)
+
+    &__list
+        display: flex
+
+        &-item
+
+            &:not(:last-child)
+                margin-right: 90px
+
+.mt-person
+
+    &__img
+        margin: 0 0 21px
+
+        img
+            display: block
+
+    &__name
+        font-size: em(20)
+        line-height: calc(24 / 20)
+        margin: 0 0 10px
+        max-width: 190px
+
+    &__position
+        color: rgba(255,255,255, .5)
+        max-width: 290px

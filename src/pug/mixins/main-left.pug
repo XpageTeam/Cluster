@@ -1,4 +1,5 @@
-mixin mainLeft(logoType)
+mixin mainLeft(logoType, curSection)
+    - var ids = ["main", "targets", "territory", "prod", "news", "contacts", ];
     .ml-side
         .ml-side__logo
             figure.main-logo
@@ -11,11 +12,14 @@ mixin mainLeft(logoType)
                         img(src="img/transparent-logo.svg")
         nav.ml-side__nav
             ul.ms-nav
-                li.ms-nav__item.active
-                li.ms-nav__item
-                li.ms-nav__item
-                li.ms-nav__item
-                li.ms-nav__item
-                li.ms-nav__item
+                each id, i in ids
+                    li.ms-nav__item
+                        if (i == curSection)
+                            a.ms-nav__link.active(href="#"+id)
+                        else
+                            a.ms-nav__link(href="#"+id)
         .ml-side__to-bot
-            a.arrow-btn.arrow-btn--to-bot(href="#")
+            if (curSection < ids.length - 1)
+                a.arrow-btn.arrow-btn--to-bot(href="#"+ids[curSection + 1])
+            else
+                a.arrow-btn.arrow-btn--to-top(href="#"+ids[ids.length - 2])
