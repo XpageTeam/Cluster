@@ -6,7 +6,12 @@
     .mr-side__soc
         include soc.pug
     .mr-side__menu
-        .mr-side__menu-title
+        <!-- Меню пока не доверстал -->
+        .mr-side__menu-title Сделайте первый шаг на пути развития
         nav.mr-side__menu-list
+            ul.mr-menu
+                each item in ["Продукция", "Промышленные предприятия", "Инфраструктура", "Услуги кластера", "Мероприятия", "Документы", "Новости", "Контакты", ]
+                    li
+                        a.mr-menu__link(href="#")=item
         .mr-side__menu-link
             a.more-link.fancybox(href="#") Оставить заявку
