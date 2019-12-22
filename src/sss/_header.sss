@@ -46,6 +46,19 @@
                 border-color: rgba(255,255,255, .3)
 
 .burger
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    size: 35px 19px
+    cursor: pointer
+
+    span, &:before, &:after
+        background: currentColor
+        size: 100% 1px
+        display: inline-block
+
+    &:before, &:after
+        content: ""
 
     &__text
         display: none
