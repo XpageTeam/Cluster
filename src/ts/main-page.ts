@@ -24,4 +24,10 @@ function setSideBlockBottomOffset(sideBlock: HTMLElement, blockIndex: Number){
     requestAnimationFrame(function(){
         sideBlock.style.transform = `translate3d(0, calc(-100vh * ${blockIndex} + ${document.body.scrollTop}px), 0)`;
     })
-}
+};
+
+
+
+domReady(() => {
+    
+});

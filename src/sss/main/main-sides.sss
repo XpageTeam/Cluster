@@ -17,6 +17,7 @@
         &--right
             right: 0
             border-left: 1px solid 
+            transition: box-shadow .3s ease, border-color .3s ease
 
     &:first-child
 
@@ -31,7 +32,7 @@
     img
         display: block
 
-.mr, .ml
+.ml
 
     &-side
         flex: 1 1 auto
@@ -45,7 +46,23 @@
 
 .mr-side
     padding-inline: 37px
-    align-items: center
+    display: grid
+    flex: 1 1 auto
+    gap: 37px
+    grid-template-areas: "burger menu" "soc menu"
+    grid-template-rows: 1fr auto
+    grid-template-columns: auto 1fr
+
+    &__burger
+        grid-area: burger
+        display: flex
+        justify-content: center
+
+    &__soc
+        grid-area: soc
+
+    &__menu
+        grid-area: menu
 
     &__soc
         

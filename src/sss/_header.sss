@@ -51,14 +51,28 @@
     flex-direction: column
     size: 35px 19px
     cursor: pointer
+    position: relative
 
     span, &:before, &:after
         background: currentColor
         size: 100% 1px
         display: inline-block
 
+    span
+        transition: opacity .3s ease
+
     &:before, &:after
         content: ""
+        transition: transform .3s ease
 
     &__text
-        display: none
+        position: absolute calc(100% + 25px) 0 *
+        transform: rotateZ(180deg)
+        line-height: 1
+        writing-mode: tb-rl
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: opacity .3s ease
+        opacity: 0
+        pointer-events: none

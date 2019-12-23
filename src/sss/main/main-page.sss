@@ -11,6 +11,16 @@ body.main
     overflow-x: hidden
     -webkit-overflow-scrolling: touch
 
+body:not(.js__menu-opened)
+
+    .main-screen
+
+        &:first-child
+
+            .burger
+                opacity: 0
+                pointer-events: none
+
 .main-title
     font-size: em(40)
     line-height: calc(42 / 40)

@@ -6,7 +6,62 @@
         font-weight: 300
 
 .mr-side
+    font-weight: 400
     
     &__menu
-        position: absolute 0 * 0 100%
-        border-left: 1px solid 
+        position: relative
+        background: #fff
+        padding-inline: 90px
+        padding-bottom: 9px
+        padding-top: 15px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        max-width: 400px
+
+        &:before
+            content: ""
+            position: absolute 50% * * -1px
+            transform: translateY(-50%)
+            background: rgba(0, 0, 0, .1)
+            height: 200vh
+            width: 1px
+
+        &-title
+            font-size: em(34)
+            line-height: calc(36 / 34)
+
+.mr-menu
+
+    li
+
+        &:not(:first-child)
+            margin: 19px 0 0
+
+    &__link
+        border-bottom: 1px solid transparent
+        transition: border-color .3s ease
+
+        &:hover, &.active
+            border-color: currentColor
+
+.js__menu-opened
+
+    .main-screen__side--right
+        color: #000 #fff
+        box-shadow: 0 38px 30px 4px rgba(0,0,0,.05)
+        border-color: transparent !important
+
+    .burger
+
+        &__text
+            opacity: 1
+
+        span
+            opacity: 0
+
+        &:before
+            transform: rotateZ(45deg) translate3d(6px, 7px, 0) scaleX(.6)
+
+        &:after
+            transform: rotateZ(-45deg) translate3d(6px, -7px, 0) scaleX(.6)
