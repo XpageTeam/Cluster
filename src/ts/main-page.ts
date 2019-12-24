@@ -2,7 +2,14 @@ import domReady from "./xpage/ready";
 import App from "./xpage/core";
 import { EventListener } from "./xpage/index";
 
-domReady(() => {    
+domReady(() => {
+    console.log(window.is.touchDevice());
+    
+    if (!window.is.touchDevice())
+        (async function(){
+            await import("./main-decorations");
+        })();
+
     App.each(".ml-side", (el: HTMLElement, i: Number) => {
         document.body.addEventListener("scroll", function(){
             setSideBlockBottomOffset(el, i);
@@ -37,7 +44,7 @@ domReady(() => {
 
                 menuItem.style.width = "0";
 
-                menuItem.style.display = "block";
+                menuItem.style.display = "flex";
 
                 menuItem.style.width = `${menuItem.scrollWidth}px`;
 
@@ -48,6 +55,8 @@ domReady(() => {
                         el.style.height = "auto";
                     else
                         el.style.display = "none";
+
+                    el.style.overflow = "visible";
                 }, {
                     once: true
                 });
@@ -69,6 +78,8 @@ domReady(() => {
                         el.style.width = "auto";
                     else
                         el.style.display = "none";
+
+                    el.style.overflow = "visible";
                 }, {
                     once: true
                 });

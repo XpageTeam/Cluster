@@ -213,6 +213,8 @@ body:not(.js__menu-opened)
             size: 180px 184px
             z-index: 2
 
+            display: none
+
 .ter-regions
     font-weight: 300
 
@@ -364,6 +366,44 @@ body:not(.js__menu-opened)
     align-items: flex-start
     position: relative
     padding-left: var(--main-padding)
+
+    &__decor
+
+        &-top, &-top-mid, &-mid-right, &-mid-left, &-bot
+            position: absolute
+            background-size: contain !important
+
+        &-top
+            background: url("../img/main-contacts-decor-top.svg") no-repeat
+            left: calc(100% - 40px)
+            top: -55px
+            size: 180px 184px
+
+            &-mid
+                size: 261px 231px
+                background: url("../img/main-contacts-decor-top-mid.svg") no-repeat
+                top: 130px
+                right: 10px
+
+        &-mid
+
+            &-right
+                size: 203px 199px
+                top: calc(50% - 100px)
+                left: calc(100% - 50px)
+                background: url("../img/main-contacts-decor-mid-right.svg") no-repeat
+
+            &-left
+                size: 258px 199px
+                top: calc(50% - 20px)
+                right: 0
+                background: url("../img/main-contacts-decor-mid-left.svg") no-repeat
+
+        &-bot
+            bottom: 0
+            right: -60px
+            size: 205px 89px
+            background: url("../img/main-contacts-decor-bot.svg") no-repeat
 
     &__text
         max-width: 715px

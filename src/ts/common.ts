@@ -2,6 +2,7 @@ import "./forms";
 
 import "./documents";
 import "./card";
+import "./top-tabs";
 
 declare global {
 	interface Window {

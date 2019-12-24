@@ -28,6 +28,11 @@
         justify-content: flex-end
         grid-area: soc
 
+.logo
+
+    img
+        display: block
+
 .h-menu
     display: flex
     justify-content: space-between
@@ -76,3 +81,110 @@
         transition: opacity .3s ease
         opacity: 0
         pointer-events: none
+
+
+
+
+@media (max-width: 1700px)
+    :root
+        --base-padding: 3em
+
+    .head
+        padding: 40px var(--base-padding)
+
+@media (max-width: 1600px)
+    :root
+        --base-padding: 2em
+
+    .head
+
+        &__wrap
+            gap: 20px
+            grid-template-columns: auto 1fr auto
+
+        &__menu
+            margin: 0
+
+    .h-menu
+
+        li
+
+            &:not(:last-child)
+                margin-right: 5px
+
+        &__link
+            white-space: nowrap
+
+@media (max-width: 1500px)
+    .head
+
+        &__menu
+            margin: 0 -10px
+
+    .h-menu
+        
+        &__link
+            padding: 5px 10px 6px
+
+@media (max-width: 1300px)
+    :root
+        --base-padding: 28px
+
+    .head
+
+        &__wrap
+            grid-template-areas: "logo menu"
+            grid-template-columns: 100px 1fr
+
+        &__soc
+            display: none
+
+@media (max-width: 1200px) and (min-width: 1000px)
+    .head
+        padding: 25px var(--base-padding)
+
+        &__wrap
+            grid-template-columns: auto 1fr
+
+    .h-menu
+        font-size: 14px
+
+@media (max-width: 1000px)
+    .head
+        padding: 20px var(--base-padding)
+
+        &__wrap
+            grid-template-areas: "logo soc burger"
+            grid-template-columns: 100px 1fr auto
+        
+        &__burger
+            grid-area: burger
+
+        &__menu
+            display: none
+
+        &__soc
+            display: flex
+
+            .soc
+
+                &__link
+                    border-color: transparent
+
+@media (max-width: 660px)
+    .head
+
+        &__wrap
+            grid-template-columns: 70px 1fr auto
+
+        &__soc
+
+            .soc
+
+                &__link
+                    margin: 0
+                    size: 40px
+
+@media (max-width: 350px)
+    :root
+        --base-padding: 20px

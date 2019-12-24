@@ -46,6 +46,9 @@
     &__dev
         grid-area: dev
 
+        img
+            display: block
+
     &__soc, &__dev
         display: flex
         justify-content: flex-end
@@ -92,3 +95,60 @@
             position: absolute calc(50% - 6px) * * calc(100% + 20px)
             background: url("../img/ico-arrow-for-btn-white.svg") center no-repeat
             size: 15px 11px
+
+
+
+@media (max-width: 1700px)
+    .footer
+
+        &:before
+            top: calc(50% + 10px)
+
+        &__wrap
+            padding: 40px var(--base-padding)
+            gap: 70px 30px
+
+@media (max-width: 1500px) and (min-width: 1300px)
+    .footer
+        margin: 50px 0 0
+
+@media (max-width: 1300px) and (min-width: 1000px)
+    .footer
+        margin: 35px 0 0
+
+@media (max-width: 1000px)
+    .footer
+        margin: var(--base-padding) 0 0
+
+@media (max-width: 1000px) and (min-width: 660px)
+    .footer
+
+        &__wrap
+            grid-template-areas: "contacts address links" "copy soc dev"
+            grid-template-columns: 210px 295px auto
+
+        &__soc
+            display: flex
+            justify-content: center
+
+@media (max-width: 660px)
+    .footer
+
+        &:before
+            display: none
+
+        &__wrap
+            padding: 20px var(--base-padding)
+            grid-template-areas: "soc" "links" "copy"
+            grid-template-columns: 100%
+            gap: 20px
+
+        &__links
+            display: flex
+
+        &__soc, &__links, &__copy
+            text-align: center
+            justify-content: center
+
+        &__contacts, &__address, &__dev
+            display: none

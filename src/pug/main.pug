@@ -5,7 +5,7 @@ html(lang="ru")
 		title Главная
 		include inc/head.pug
 		include inc/css.pug
-	body.main.loading.js__menu-opened
+	body.main.loading
 		include mixins/main-left.pug
 		main#content
 			section.main-screen.main-screen--blue-bg#main
@@ -136,6 +136,12 @@ html(lang="ru")
 					.main-screen__content-content
 						.wrapper
 							.main-contacts
+								.main-contacts__decor
+									.main-contacts__decor-top
+									.main-contacts__decor-top-mid
+									.main-contacts__decor-mid-right
+									.main-contacts__decor-mid-left
+									.main-contacts__decor-bot
 								.main-contacts__text
 									p Управляющая компания Кластера — Автономная некоммерческая организация «Специализированная организация промышленного кластера «Композиты без границ» (АНО «СОПК «Композиты без границ»)
 								.main-contacts__contacts

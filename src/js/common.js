@@ -1,7 +1,11 @@
 import $ from "jquery"
+import is from "is_js";
+import {TweenLite} from "gsap";
 
 window.jQuery = $
 window.$ = $
+window.is = is;
+window.TweenLite = TweenLite;
 
 let isFancyboxReady = false;
 
