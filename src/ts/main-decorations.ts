@@ -14,7 +14,7 @@ decorations.map(function(el: HTMLElement, i: number) {
         random = randomInt(5, 60);
 
         pos.x = (e.pageX - window.innerWidth / 2) * -1 / random;
-        pos.y = (e.pageY - window.innerHeight / 2) * -1 / random;
+        pos.y = !el.classList.contains("main-contacts__decor-bot") ? (e.pageY - window.innerHeight / 2) * -1 / random : 0;
 
         window.TweenLite.to(el, 2, {
             x: pos.x,

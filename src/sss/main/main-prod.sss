@@ -1,0 +1,70 @@
+.main-prod
+    min-height: inherit
+    size: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    position: relative
+    padding-left: var(--main-padding)
+    transform: translate3d(0,-30px,0)
+
+    &__title
+        margin: 0 0 26px
+
+    &__text
+        max-width: 530px
+        font-weight: 300
+        margin: 0 0 75px
+
+    &__decor
+        position: absolute 80px 200px * *
+        background: url("../img/prod-decor.svg") no-repeat
+        size: 203px 199px
+
+.prod-list
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 69px 65px
+
+    &__item
+
+        &:nth-child(even):nth-last-child(even):nth-last-child(2)
+            grid-row: span 2
+            display: flex
+            flex-direction: column
+            justify-content: center
+
+.prod-item
+    display: block
+    position: relative
+
+    &:before, &__title, &__arrow
+        position: absolute
+
+    &:before
+        content: ""
+        top: 0
+        left: 0
+        size: 100%
+        background: linear-gradient(359.64deg, #000000 0.37%, rgba(0, 0, 0, 0) 99.56%)
+
+    &__title
+        color: #fff
+        font-size: em(24)
+        line-height: calc(27 / 24)
+        padding: 20px 68px 70px
+        bottom: 0
+        left: 0
+        width: 100%
+        max-width: 410px
+        font-weight: 300
+
+    &__img
+
+        img
+            display: block
+
+    &__arrow
+        top: 52px
+        right: 53px

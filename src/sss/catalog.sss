@@ -66,3 +66,28 @@
         -webkit-box-orient: vertical
         -webkit-line-clamp: 3
         line-clamp: 3
+
+@media (max-width: 1400px)
+    .catalog-list
+
+        &__item
+
+            &:not(:first-child)
+                margin: 35px 0 0
+
+    .cat-item
+        
+        &__img
+            margin-right: 35px
+
+@media (max-width: 660px)
+    .cat-item
+        display: block
+
+        &__img
+            margin-right: 0
+            margin-bottom: 25px
+            width: 100%
+
+        &__arrow
+            display: none

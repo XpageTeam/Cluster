@@ -138,3 +138,59 @@
 
     a
         line-height: 1
+
+
+@media (max-width: 1400px) and (min-width: 660px)
+    .contacts
+
+        &__top + div
+            padding: 45px 0
+
+    .team
+        padding: 30px 0 0
+
+        &__title
+            margin: 0 0 20px
+
+@media (max-width: 660px)
+    .contacts
+        
+        &__top
+            display: block
+
+        &__texts
+            padding: 0
+
+        &__form
+            margin: 25px calc(-1 * var(--base-padding)) 0
+
+    .contacts-text
+
+        &__text
+            margin: 0
+
+    .contacts
+
+        &__top + div
+            padding: 0
+
+    .team
+
+        &__title
+            margin-bottom: 10px
+
+    .team-item
+        padding: 20px 0
+        align-items: flex-start
+
+        &__img
+            margin-right: 20px
+
+    .t-info
+        display: block
+
+        &__name, &__phone, &__email
+            width: auto
+            
+            &:not(:first-child)
+                margin: 20px 0 0

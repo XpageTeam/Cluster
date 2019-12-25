@@ -1,7 +1,7 @@
 .main-screen
 
     &__side
-        position: absolute * * 0
+        position: absolute 0 * *
         z-index: 10
         height: 100vh
         max-height: 100%
@@ -97,3 +97,21 @@
 
             &:hover
                 transform: scaleX(calc(20 / 30))
+
+@media (max-width: 1600px)
+    .ml-side
+        padding-inline: 50px
+
+    .mr-side
+        padding-inline: 25px
+
+        &__menu
+
+            &::before
+                left: 25px !important
+
+@media (max-height: 900px)
+    .main-screen
+
+        &__side
+            padding-block: vh(70, 900)

@@ -104,3 +104,47 @@
     min-height: 120px
     width: 160px
     
+
+@media (max-width: 1000px) and (min-width: 660px)
+    .c-detail
+
+        &__top
+            display: grid
+            grid-template-areas: "slider desc" "slider logo"
+            grid-template-columns: 320px 1fr
+            gap: 30px
+
+            &-slider
+                margin-right: 0 !important
+                grid-area: slider
+
+            &-desc
+                margin-right: 0 !important
+                grid-area: desc
+
+            &-logo
+                grid-area: logo
+
+        &__text
+            margin: 30px 0 0
+
+@media (max-width: 1000px)
+    .detail-desc
+        
+        &__button
+            margin: 0 0 20px
+
+@media (max-width: 660px)
+    .c-detail
+
+        &__top
+            display: block
+
+            &-slider, &-desc, &-logo
+                margin-right: 0 !important
+
+                &:not(:first-child)
+                    margin: 30px 0 0
+        
+        &__text
+            margin: 30px 0 0

@@ -1,0 +1,60 @@
+.main-news
+    min-height: inherit
+    size: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    position: relative
+    padding-left: var(--main-padding)
+
+    &__title
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin: 0 0 100px
+
+    &__list
+        display: flex
+        flex-wrap: wrap
+        margin: 0 0 -45px -45px
+
+        &-item
+            width: calc((100% - 45px * 2) / 2)
+            margin: 0 0 45px 45px
+            
+.m-news
+    display: grid
+    grid-template-areas: "img date" "img title" "text text"
+    grid-template-columns: 184px 1fr
+    gap: 25px
+    // max-width: 470px
+
+    &__img
+        grid-area: img
+
+        img
+            display: block
+
+    &__date
+        grid-area: date
+
+    &__title
+        grid-area: title
+        font-weight: 400
+        font-size: em(20)
+        line-height: calc(28 / 20)
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        /* autoprefixer: ignore next */
+        -webkit-box-orient: vertical
+        -webkit-line-clamp: 3
+        line-clamp: 3
+
+        a
+            border: none
+            color: inherit
+
+    &__text
+        grid-area: text
+        max-width: 430px

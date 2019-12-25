@@ -1,0 +1,66 @@
+.main-territory
+    min-height: inherit
+    size: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    position: relative
+    padding-left: var(--main-padding)
+    // max-width: calc(700px + var(--main-padding))
+    padding-bottom: 130px
+
+    &__decor
+        position: absolute 0
+        pointer-events: none
+
+        &-top, &-bottom
+            position: absolute
+
+        &-top
+            background: url("../img/territory-top-decor.svg") no-repeat
+            size: 261px 231px
+            right: -46px
+            top: -63px
+
+        &-bottom
+            background: url("../img/territory-bot-decor.svg") no-repeat
+            size: 180px 184px
+            right: -26px
+            bottom: -18px
+
+    &__map
+        position: absolute 130px * 0 calc(300px + var(--main-padding))
+        overflow: hidden
+        width: calc(100vw - 810px)
+
+        &:after
+            content: ""
+            pointer-events: none
+            position: absolute 0
+            background: url("../img/territory-shadow.png") bottom right no-repeat
+
+        svg
+            max-width: none
+            display: block
+
+    &__title
+        max-width: 360px
+        margin: 0 0 75px
+        position: relative
+
+        &-decor
+            position: absolute 30px * * calc(100% + 10px)
+            background: url("../img/territory-center-decor.svg") no-repeat
+            size: 180px 184px
+            z-index: 2
+
+            display: none
+
+.ter-regions
+    font-weight: 300
+
+    &__item
+
+        &:not(:first-child)
+            margin: 25px 0 0
