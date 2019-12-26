@@ -48,3 +48,67 @@
 
         &:before
             background-color: var(--main-color)
+
+@media (max-height: 900px) and (min-width: 1000px)
+    .top-block
+        padding-block: vh(70, 900)
+
+
+
+@media (max-width: 1400px) and (min-width: 1300px)
+    :root
+        --main-padding: 9vw
+
+    .top-block
+        padding-inline: var(--main-padding)
+
+@media (max-width: 1330px)
+    .top-block
+        
+        &__text
+            
+            &-title
+                font-size: 3em
+
+@media (max-width: 1300px)
+    :root
+        --main-padding: 140px !important
+
+    .top-block
+        padding-inline: var(--main-padding)
+
+@media (max-width: 1100px)
+    .top-block
+
+        &__nav
+            display: none
+
+        &:before
+            content: ""
+
+
+
+
+@media (max-width: 1000px) and (min-width: 660px)
+    .top-block
+        padding: 50px 0
+        font-size: 13px
+
+        &__link
+            margin: 30px 0 0
+
+@media (max-width: 660px)
+    .top-block
+        padding: 30px 0
+        font-size: 14px
+
+        &__link
+            margin: 30px 0 0
+
+        &__text
+
+            &-title
+                font-size: 2em
+
+                &:not(:last-child)
+                    margin: 0 0 25px

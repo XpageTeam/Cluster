@@ -9,6 +9,9 @@
     padding-left: var(--main-padding)
     transform: translate3d(0,-30px,0)
 
+    @media (max-height: 965px) and (min-width: 660px)
+        margin-bottom: -101px
+
     &__title
         margin: 0 0 26px
 
@@ -68,3 +71,53 @@
     &__arrow
         top: 52px
         right: 53px
+
+
+
+@media (max-width: 1400px) and (min-width: 660px)
+    .main-prod
+        padding-inline: var(--main-padding)
+
+    .prod-list
+        gap: 30px
+
+    .prod-item
+
+        &__title
+            padding: 25px 35px 35px
+
+        &__arrow
+            top: 35px
+            right: 35px
+
+
+@media (max-width: 1000px)
+    .main-prod
+        transform: none
+
+        &__decor
+            display: none
+
+        &__text
+            margin: 0 0 40px
+
+@media (max-width: 660px)
+    .main-prod
+        font-size: 14px
+
+    .prod-list
+        display: block
+
+        &__item
+
+            &:not(:first-child)
+                margin: 20px 0 0
+
+    .prod-item
+
+        &__title
+            padding: 20px
+
+        &__arrow
+            top: 20px
+            right: 20px

@@ -1,3 +1,26 @@
+.mobile-menu__cont
+    .mobile-menu
+        nav.mobile-menu__menu
+            ul.side-menu
+                each item, i in ["Продукция", "Промышленные предприятия", "Инфраструктура", "Услуги кластера", "Мероприятия", "Документы", "Новости", "Контакты", ]
+                    li
+                        if (i == 0)
+                            a.side-menu__link.active(href="#")=item
+                        else
+                            a.side-menu__link(href="#")=item
+        .mobile-menu__contacts
+            .f-contacts
+                address.f-contacts__phone
+                    a(href="tel: +7 495 777 01 23 ") +7 495 777 01 23
+                address.f-contacts__email
+                    a(href="mailto: info@compositescluster.ru  ") info@compositescluster.ru
+            address.f-address
+                p 109316, г. Москва, 
+                    br
+                    | Волгоградский просп., д. 42, корп. 13  
+        .mobile-menu__request
+            .f-links
+                a.f-links__link.fancybox(href="#request") Оставить заявку
 header.head
     .head__wrap
         .head__logo

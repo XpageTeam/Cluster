@@ -2,15 +2,13 @@ import domReady from "./xpage/ready";
 import App from "./xpage/core";
 import { EventListener } from "./xpage/index";
 
-domReady(() => {
-    console.log(window.is.touchDevice());
-    
+domReady(() => {    
     if (!window.is.touchDevice())
         (async function(){
             await import("./main-decorations");
         })();
 
-    App.each(".ml-side", (el: HTMLElement, i: Number) => {
+    App.each(".ml-side", (el: HTMLElement, i: number) => {
         document.body.addEventListener("scroll", function(){
             setSideBlockBottomOffset(el, i);
         });
@@ -18,7 +16,7 @@ domReady(() => {
         setSideBlockBottomOffset(el, i);
     });    
 
-    App.each(".mr-side", (el: HTMLElement, i: Number) => {
+    App.each(".mr-side", (el: HTMLElement, i: number) => {
         document.body.addEventListener("scroll", function(){
             setSideBlockBottomOffset(el, i);
         });
@@ -28,10 +26,24 @@ domReady(() => {
     });
 });
 
-function setSideBlockBottomOffset(sideBlock: HTMLElement, blockIndex: Number){
+function setSideBlockBottomOffset(sideBlock: HTMLElement, blockIndex: number){
+    const parentMainScreen = sideBlock.closest(".main-screen"),
+        allParents = App.transformNodeListToArray(document.querySelectorAll(".main-screen"));
+
+    let topOffset = -parentMainScreen.clientHeight * blockIndex + document.body.scrollTop;
+
+    allParents.forEach(function(el: HTMLElement, i: number){
+        if (el.clientHeight > window.innerHeight && blockIndex > i)
+            topOffset -= el.clientHeight - window.innerHeight;
+
+        if (parentMainScreen.clientHeight > window.innerHeight && blockIndex == i)
+            topOffset += (parentMainScreen.clientHeight - window.innerHeight) * i;
+    });
+
+    
     requestAnimationFrame(function(){
-        sideBlock.style.transform = `translate3d(0, calc(-100vh * ${blockIndex} + ${document.body.scrollTop}px), 0)`;
-    })
+        sideBlock.style.transform = `translate3d(0, ${topOffset}px, 0)`;
+    });
 };
 
 

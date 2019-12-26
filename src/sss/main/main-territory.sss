@@ -64,3 +64,36 @@
 
         &:not(:first-child)
             margin: 25px 0 0
+
+
+@media (max-height: 670px) and (min-width: 1000px)
+    .main-territory
+        
+        &__title
+            margin: 0 0 40px
+
+
+@media (max-width: 1000px) and (min-width: 660px)
+    .main-territory
+
+        &__title
+            margin: 0 0 30px
+            max-width: 70%
+
+        &__regions
+            width: 70%
+
+    .ter-regions
+        column-count: 2
+
+@media (max-width: 660px)
+    .main-territory
+        font-size: 14px
+        padding: 0
+
+        &__decor
+            display: none
+
+        &__title
+            margin: 0 0 25px
+            font-size: 13px

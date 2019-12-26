@@ -12,11 +12,15 @@
 :root
     --main-padding: vw(183)
 
-body.main
-    position: fixed 0
-    overflow-y: auto
-    overflow-x: hidden
-    -webkit-overflow-scrolling: touch
+@media (min-width: 1000px)
+    body.main
+        position: fixed 0
+        overflow-y: auto
+        overflow-x: hidden
+        -webkit-overflow-scrolling: touch
+
+        .footer, .head
+            display: none
 
 body:not(.js__menu-opened)
 
@@ -67,5 +71,42 @@ body:not(.js__menu-opened)
                 height: 100%
                 min-height: inherit
 
-// @media (max-height: 900px)
+@media (max-height: 700px) and (min-width: 1000px)
+    .main-screen__content
+        min-height: 700px
+        font-size: 14px
     
+
+
+@media (max-width: 1000px)
+    .main-screen
+
+        &__side
+            display: none
+
+        &__content
+            min-height: 0
+
+        &:not(:first-child) &__content
+            padding: 40px 0
+
+    .main-title
+        font-size: 2em
+    
+    :root
+        --main-padding: 0px !important
+
+    body.main
+
+        .footer
+            margin: 0
+            border-top: 1px solid hsla(0,0%,100%,.2)
+
+@media (max-width: 660px)
+    .main-title
+        font-size: 1.8em
+
+    .main-screen
+
+        &:not(:first-child) &__content
+            padding: 30px 0

@@ -6,6 +6,7 @@ html(lang="ru")
 		include inc/head.pug
 		include inc/css.pug
 	body.main.loading
+		include inc/header.pug
 		include mixins/main-left.pug
 		main#content
 			section.main-screen.main-screen--blue-bg#main
@@ -207,5 +208,6 @@ html(lang="ru")
 															a(href="mailto: i.golubkin@umatex.com") i.golubkin@umatex.com
 				aside.main-screen__side.main-screen__side--right
 					include inc/main-right.pug
+		include inc/footer.pug
 		include inc/scripts.pug
 		script(src="js/main-page.js")

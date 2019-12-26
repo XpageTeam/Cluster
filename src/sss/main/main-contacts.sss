@@ -95,3 +95,58 @@
     &__position
         color: rgba(255,255,255, .5)
         max-width: 290px
+
+@media (max-width: 1400px)
+    .main-contacts
+        
+        &__text
+            margin: 0 0 35px
+
+        &__contacts
+            margin: 0 0 45px
+
+@media (max-width: 1200px)
+    .main-contacts__decor
+        display: none
+
+    .main-team
+        
+        &__list
+            
+            &-item
+                
+                &:not(:last-child)
+                    margin-right: 30px
+
+
+
+@media (max-width: 1000px) and (min-width: 660px)
+    .main-contacts
+
+        &__contacts
+            display: none
+
+@media (max-width: 660px)
+    .main-contacts
+        font-size: 14px
+
+    .m-contacts
+        display: block
+
+        > *
+
+            &:not(:first-child)
+                margin: 15px 0 0
+
+    .main-team
+
+        &__title
+            margin: 0 0 25px
+
+        &__list
+            flex-wrap: wrap
+            margin: 0 0 calc(-1 * var(--base-padding)) calc(-1 * var(--base-padding))
+            
+            &-item
+                width: calc((100% - var(--base-padding) * 2) / 2)
+                margin: 0 0 var(--base-padding) var(--base-padding) !important
