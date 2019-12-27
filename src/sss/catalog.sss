@@ -87,7 +87,25 @@
         &__img
             margin-right: 0
             margin-bottom: 25px
+            height: auto
             width: 100%
+
+            img
+                width: 100%
 
         &__arrow
             display: none
+
+    .catalog-list
+
+        &__item
+
+            &:not(:first-child)
+                position: relative
+                margin: 70px 0 0
+
+                &:before
+                    content: ""
+                    position: absolute -35px 0 *
+                    background: var(--border-color)
+                    height: 1px
