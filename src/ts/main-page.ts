@@ -1,6 +1,7 @@
 import domReady from "./xpage/ready";
 import App from "./xpage/core";
 import { EventListener } from "./xpage/index";
+import {TweenLite} from "gsap";
 
 domReady(() => {    
     if (!window.is.touchDevice())
@@ -102,3 +103,149 @@ domReady(() => {
 
     });
 });
+
+const tersObjects: Array<territory> = [];
+
+domReady(() => {
+    ;(function(){
+        const ters = App.transformNodeListToArray( document.querySelectorAll("#territories > g"));
+
+        if (!ters.length)
+            return;
+
+        for (const ter of ters){
+            tersObjects.push(new territory(ter));
+        }
+    })();
+});
+
+class territory{
+    public id: string;
+
+    private object: HTMLElement;
+
+    private center: SVGCircleElement;
+    private circle: SVGPathElement;
+
+    private text: SVGTextElement;
+    private textBG: SVGRectElement;
+
+    private line: SVGRectElement;
+
+    private bg: SVGPathElement;
+
+    private curAnimation: any = {};
+
+    constructor(object: HTMLElement){
+        this.id = object.getAttribute("id");
+
+        this.center = object.querySelector(".reg-center");
+        this.circle = object.querySelector(".reg-circle");
+
+        this.text = object.querySelector("text.reg-label");
+        this.textBG = object.querySelector("rect.reg-label");
+
+        this.line = object.querySelector(".line");
+
+        this.bg = object.querySelector(".reg-fill");
+
+        this.object = object;
+        
+        this.bindEvents();
+    }
+
+    public show(){
+        const self = this;
+
+        for (const ter of getAnotherTerritories(this.id))
+            ter.hide();
+        
+        self.curAnimation = window.TweenLite.to(self.bg, .1, {
+            opacity: 1,
+            onComplete(){
+                self.curAnimation = window.TweenLite.to(self.circle, .1, {
+                    opacity: 1,
+                    onComplete(){
+                        self.curAnimation = window.TweenLite.to(self.center, .1, {
+                            opacity: 1,
+                            onComplete(){
+                                self.curAnimation = window.TweenLite.to(self.line, .1, {
+                                    opacity: 1,
+                                    onComplete(){
+                                        self.curAnimation = window.TweenLite.to(self.text, .1, {
+                                            opacity: 1
+                                        });
+                                        self.curAnimation = window.TweenLite.to(self.textBG, .1, {
+                                            opacity: 1
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+    public hide(){
+        const self = this;
+
+        if (this.curAnimation.kill)
+            this.curAnimation.kill();
+
+        window.TweenLite.to(self.text, .1, {
+            opacity: 0
+        });
+        window.TweenLite.to(self.textBG, .1, {
+            opacity: 0,
+            onComplete(){
+                window.TweenLite.to(self.line, .1, {
+                    opacity: 0,
+                    onComplete(){
+                        window.TweenLite.to(self.center, .1, {
+                            opacity: 0,
+                            onComplete(){
+                                window.TweenLite.to(self.circle, .1, {
+                                    opacity: 0,
+                                    onComplete(){
+                                        window.TweenLite.to(self.bg, .1, {
+                                            opacity: 0,
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+    private setTRO(){
+        window.TweenLite.set(this.center, {
+            transformOrigin: "center"
+        });
+
+        window.TweenLite.set(this.circle, {
+            transformOrigin: "center"
+        });
+    }
+
+    private bindEvents(){
+        this.bg.addEventListener("mouseover", () => {
+            this.show();
+        });
+        this.object.addEventListener("mouseleave", () => {
+            this.hide();
+        });
+    }
+}
+
+function getTerritoriBYID (id: string): territory{
+    return tersObjects.filter(item => item.id == id)[0];
+}
+
+function getAnotherTerritories(excludeID: string): Array<territory>{
+    return tersObjects.filter(item => item.id != excludeID);
+}
