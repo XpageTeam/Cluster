@@ -64,8 +64,8 @@ html(lang="ru")
 									.main-territory__title-decor
 								.main-territory__regions
 									ul.ter-regions
-										each region in ["Московская область", "Тульская область ", "Республика Татарстан", "Ульяновская область ", "Саратовская область ", ]
-											li.ter-regions__item=region
+										each region in [{title: "Московская область", id: "msk"}, {title: "Тульская область", id: "tulsk"}, {title: "Республика Татарстан", id: "tatar"}, {title: "Ульяновская область", id: "ulyan"}, {title: "Саратовская область", id: "Saratov"}]
+											li.ter-regions__item(data-target=region.id)=region.title
 								.main-territory__map
 									include main-map/map.svg
 								.main-territory__decor

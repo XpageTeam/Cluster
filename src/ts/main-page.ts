@@ -108,7 +108,8 @@ const tersObjects: Array<territory> = [];
 
 domReady(() => {
     ;(function(){
-        const ters = App.transformNodeListToArray( document.querySelectorAll("#territories > g"));
+        const ters = App.transformNodeListToArray( document.querySelectorAll("#territories > g")),
+            tersListItems = App.transformNodeListToArray(document.querySelectorAll(".ter-regions__item"));
 
         if (!ters.length)
             return;
@@ -116,6 +117,18 @@ domReady(() => {
         for (const ter of ters){
             tersObjects.push(new territory(ter));
         }
+
+        if (!tersListItems.length) return;
+
+        for (const terItem of tersListItems)
+            terItem.addEventListener("mouseover", function(){
+                const targetID = this.getAttribute("data-target");
+                
+                for (const ter of getAnotherTerritories(targetID))
+                    ter.hide();
+
+                getTerritoriBYID(targetID).show();
+            });
     })();
 });
 
