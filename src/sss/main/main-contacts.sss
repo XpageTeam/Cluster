@@ -74,14 +74,18 @@
         display: flex
 
         &-item
+            display: flex
 
             &:not(:last-child)
                 margin-right: 90px
 
 .mt-person
+    display: flex
+    flex-direction: column
 
     &__img
         margin: 0 0 21px
+        flex: none
 
         img
             display: block
@@ -95,6 +99,10 @@
     &__position
         color: rgba(255,255,255, .5)
         max-width: 290px
+        margin-bottom: 28px
+
+    &__phone
+        margin-top: auto !important
 
 @media (max-width: 1400px)
     .main-contacts
