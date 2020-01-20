@@ -1,119 +1,136 @@
+.documents-text
+	
+	&:not(:last-child)
+		margin: 0 0 40px
+
+	&__text
+		max-width: 800px
+
 .document-item
 
-    &.js__opened &__title:after
-        transform: rotateZ(-135deg)
+	&.js__opened &__title:after
+		transform: rotateZ(-135deg)
 
-    &__title
-        border-top: 1px solid var(--border-color)
-        padding: 37px 100px 37px 0
-        position: relative
-        cursor: pointer
-        user-select: none
+	&__title
+		border-top: 1px solid var(--border-color)
+		padding: 37px 100px 37px 0
+		position: relative
+		cursor: pointer
+		user-select: none
 
-        &-text
-            font-size: em(24)
-            line-height: calc(34 / 24)
-            max-width: 760px
-            display: block
+		&-text
+			font-size: em(24)
+			line-height: calc(34 / 24)
+			max-width: 760px
+			display: block
 
-        &:after
-            content: ""
-            position: absolute calc(50% - 3px) 45px * *
-            size: 6px
-            border-right: 1px solid #000
-            border-bottom: 1px solid #000
-            transform: rotateZ(45deg)
+		&:after
+			content: ""
+			position: absolute calc(50% - 3px) 45px * *
+			size: 6px
+			border-right: 1px solid #000
+			border-bottom: 1px solid #000
+			transform: rotateZ(45deg)
 
-    &__content
-        display: none
-        transition: height .3s ease
+	&__content
+		display: none
+		transition: height .3s ease
+
+.doc-text,
+.doc-list
+	padding: 58px 0 70px
+	border-top: 1px solid var(--border-color)
 
 .doc-list
-    border-top: 1px solid var(--border-color)
-    padding: 58px 0 70px
 
-    &__link
-        display: inline-block
-        align-items: center
-        line-height: calc(26 / 18)
+	&__link
+		display: inline-block
+		align-items: center
+		line-height: calc(26 / 18)
 
-        &-img, &-text
-            display: inline-block
-            vertical-align: middle
+		&-img, &-text
+			display: inline-block
+			vertical-align: middle
 
-        &-img
-            margin-right: 25px
-            
-            img
-                display: block
+		&-img
+			margin-right: 25px
+			
+			img
+				display: block
 
-        &-text
-            font-size: em(18)
+		&-text
+			font-size: em(18)
 
-        &-size
-            color: #acacac
+		&-size
+			color: #acacac
 
-    li
+	li
 
-        &:not(:first-child)
-            margin: 44px 0 0
+		&:not(:first-child)
+			margin: 44px 0 0
 
 
 @media (max-width: 1400px) and (min-width: 660px)
-    .document-item
+	.document-item
 
-        &__title
-            padding: 25px 70px 25px 0
+		&__title
+			padding: 25px 70px 25px 0
 
-            &:after
-                right: 30px
+			&:after
+				right: 30px
 
-    .doc-list
-        padding: 35px 0
+	.doc-text,
+	.doc-list
+		padding: 35px 0
 
-        li
+	.doc-list
 
-            &:not(:first-child)
-                margin: 20px 0 0
+		li
 
-        &__link
+			&:not(:first-child)
+				margin: 20px 0 0
 
-            &-img
-                margin-right: 15px
+		&__link
+
+			&-img
+				margin-right: 15px
 
 @media (max-width: 660px)
-    .document-item
-        margin: 0 calc(-1 * var(--base-padding))
+	.document-item
+		margin: 0 calc(-1 * var(--base-padding))
 
-        &__title
-            padding: 20px 40px 20px var(--base-padding)
+		&__title
+			padding: 20px 40px 20px var(--base-padding)
 
-            &:after
-                right: var(--base-padding)
+			&:after
+				right: var(--base-padding)
 
-            &-text
-                font-size: em(18)
+			&-text
+				font-size: em(18)
 
-    .doc-list
-        padding: 20px var(--base-padding)
+	.doc-text,
+	.doc-list
+		padding: 20px var(--base-padding)
 
-        li
+	.doc-list
 
-            &:not(:first-child)
-                margin: 15px 0 0
+		li
 
-        &__link
-            display: block
+			&:not(:first-child)
+				margin: 15px 0 0
 
-            &:after
-                content: ""
-                clear: both
-                display: table
+		&__link
+			display: block
 
-            &-img
-                float: left
-                margin: 0 15px 15px 0
+			&:after
+				content: ""
+				clear: both
+				display: table
 
-            &-text
-                display: inline
-                font-size: em(16)
+			&-img
+				float: left
+				margin: 0 15px 15px 0
+
+			&-text
+				display: inline
+				font-size: em(16)

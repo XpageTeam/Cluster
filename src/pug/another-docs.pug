@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Документы
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						include mixins/title-block.pug
+						+titleBLock(["Композиты без границ", "Документы"])
+				.inner-content__content
+					.wrapper
+						.documents-text
+							.documents-text__text
+								p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora qui at ullam molestiae, explicabo in asperiores ducimus reprehenderit, rerum eveniet optio atque error doloremque minus nesciunt, ratione nam fuga assumenda.
+								p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora qui at ullam molestiae, explicabo in asperiores ducimus reprehenderit, rerum eveniet optio atque error doloremque minus nesciunt, ratione nam fuga assumenda.
+						.documents-list
+							each title in ["Уставные/учредительные документы управляющей компании Кластера (АНО «СОПК «Композиты без границ»)", "Соглашения Кластера", "Положения Кластера ", "Информация о Кластере", "Инструменты государственной поддержки", "Информация о композитных материалах", ]
+								.documents-list__item
+									.document-item
+										.document-item__title
+											span.document-item__title-text=title
+										.document-item__content
+											.doc-text
+												p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora qui at ullam molestiae, explicabo in asperiores ducimus reprehenderit, rerum eveniet optio atque error doloremque minus nesciunt, ratione nam fuga assumenda.
+												p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora qui at ullam molestiae, explicabo in asperiores ducimus reprehenderit, rerum eveniet optio atque error doloremque minus nesciunt, ratione nam fuga assumenda.
+		include inc/footer.pug
+		include inc/scripts.pug
