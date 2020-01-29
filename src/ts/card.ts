@@ -7,13 +7,22 @@ domReady(async () => {
 
     const {Swiper, Navigation, Autoplay, EffectFade, Lazy} = await import("swiper/dist/js/swiper.esm");
 
-    Swiper.use([Navigation, Autoplay, EffectFade, Lazy]);
+	Swiper.use([Navigation, Autoplay, EffectFade, Lazy]);
+	
+	console.log({
+		prevEl: cardSlider.querySelector(".swiper-button-prev") as HTMLElement,
+		nextEl: cardSlider.querySelector(".swiper-button-next") as HTMLElement,
+	});
 
     new Swiper(cardSlider, {
         effect: "fade",
         lazy: {
             loadPrevNext: true,
-        }
+		},
+		navigation: {
+			prevEl: cardSlider.querySelector(".swiper-button-prev") as HTMLElement,
+			nextEl: cardSlider.querySelector(".swiper-button-next") as HTMLElement,
+		}
     });
 
     window.fancyboxReady(() => {
